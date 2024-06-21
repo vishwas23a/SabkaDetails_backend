@@ -19,6 +19,9 @@ app.get('/api/users/:rollNo',(req,res)=>{
     studentModle.findOne({rollNo})
     .then(data=>res.json(data)) 
 })
+app.get('/',(req,res)=>{
+    res.send("server is live")
+})
 app.get('/api/users',(req,res)=>{
         studentModle.find()
         .then((data)=>res.json(data))
