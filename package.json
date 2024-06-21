@@ -1,22 +1,6 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "builds":[
-    {
-      "src":"./index.js",
-      "use":"@vercel/node"
-    }
-  ],
-  "routes":[
-    {
-      "src":"/(.*)",
-      "dest":"/"
-    }
-  ],
-  "env":{
-    "CORS_ORIGIN_ALLOW_ALL":"true"
-  },
-
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
