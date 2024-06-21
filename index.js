@@ -10,7 +10,6 @@ mongoose.connect("mongodb://127.0.0.1:27017/Student")
 
 app.use((req, res, next) => {
     res.setHeader('Content-Type', 'application/json');
-    res.setHeader('Access-Control-Allow-Origin', '*'); 
 
     next();
 });
@@ -37,7 +36,6 @@ app.post('/api/users',(req,res)=>{
     console.log('Received data:', req.body);
 
 
-    res.status(200).json({ message: 'User data received successfully', data: req.body });
 
 })
 
