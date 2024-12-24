@@ -1,13 +1,15 @@
 const express=require('express')
 const app=express()
 const port=3000;
+const dotenv=require('dotenv')
 const mongoose=require('mongoose')
 const studentModle=require('./Model/Students')
 const cors=require('cors')
+dotenv.config()
 app.use(cors());
 app.use(express.json())
 try {
-    mongoose.connect("mongodb+srv://vishwas_23a:wnSC74rtg4NGsYRt@mydarabase.jyzdgzw.mongodb.net/Student_details?retryWrites=true&w=majority&appName=myDaraBase")
+    mongoose.connect(process.env.MONGO_URL)
     console.log("database connected");
     
 } catch (error) {
