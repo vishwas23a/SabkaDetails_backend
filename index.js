@@ -6,7 +6,11 @@ const mongoose=require('mongoose')
 const studentModle=require('./Model/Students')
 const cors=require('cors')
 dotenv.config()
-app.use(cors());
+app.use(cors({
+    origin: "https://studentdetails01.netlify.app", // Replace with your front-end origin
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+  }));
 app.use(express.json())
 try {
     mongoose.connect(process.env.MONGO_URL)
