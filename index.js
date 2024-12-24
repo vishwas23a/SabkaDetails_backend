@@ -6,7 +6,15 @@ const studentModle=require('./Model/Students')
 const cors=require('cors')
 app.use(cors());
 app.use(express.json())
-mongoose.connect("mongodb://127.0.0.1:27017/Student")
+try {
+    mongoose.connect("mongodb+srv://vishwas_23a:wnSC74rtg4NGsYRt@mydarabase.jyzdgzw.mongodb.net/Student_details?retryWrites=true&w=majority&appName=myDaraBase")
+    console.log("database connected");
+    
+} catch (error) {
+    console.log("db connection failed");
+    
+}
+
 
 app.use((req, res, next) => {
     res.setHeader('Content-Type', 'application/json');
